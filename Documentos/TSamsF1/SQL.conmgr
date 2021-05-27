@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="SQL"
+  DTS:DTSID="{8B17586F-913F-44FE-8CA6-65D1474650C9}"
+  DTS:CreationName="OLEDB"
+  p1:Salt="sZg8zrL0Hg=="
+  p1:IV="3iJBoWlGj+c=" xmlns:p1="www.microsoft.com/SqlServer/SSIS">1IYcfRgWHcqdngG7quqgKt36o5xIJBULWW1j3X6niXFLRNGHr22uAL8ZDgF0zgsT0uyURMp9QE6TO/oX3QnaB9AEi0kYFBWolIMzZSsopRw2QiYuL/qqJx63T1/L7ND4D3zR39WerlWCb9PN74ZeJ1hUt5q/FBDkgz6KG3obUQsaIFO0d1oVUTtK2jkkDjO4CBNzTsVb+ECOlmUToaVrI0tWwQZjmH+rxJTgfMmMP414zo7HpKrXb3WbXeYkSfclAbf/4at2bqBgQfM+J3bzLs0eOjf/QMlaqLx2LiP/Haek5/1qLCWEx+BwUAGGgcaUqHJvzc5ZhNg/feO6e0J102aF7vSwUIBy2d9r3DPtQt1CSVNQZ7CI0tJZgC9SLokHq9uCzbxuflXRvqgGLbFWJQu2j/omKQUoPNrFilW4CDlAQXi3+JcJo+q/PMfZL1f0Rd0uR59LD3MWX9k0GL5SwC31y8y2vQB3llxIgEQmGDrN+AvmjrR1/39HNsLzpAul8ObZl7VqX7GwYFEq0hWoBJwSMsCJVmzuFB+3hqTtarA=</DTS:ConnectionManager>

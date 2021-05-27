@@ -1,0 +1,50 @@
+@import "modal-espera.css";
+@import "grid.css";
+@import "destaque-validacao.css";
+@import "input.css";
+@import "material-icons.css";
+@import "menu.css";
+
+main {
+    padding: 1rem;
+    background-image: linear-gradient( #e9ecef, #ffffff);
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+}
+
+.header-image {
+    width: 30px;
+    height: 30px;
+}
+
+.alert-sm {
+    padding: 0.25rem 1.25rem;
+    display: inline-block;
+    line-height: 1.5;
+    margin-bottom: 0;
+    font-size: .875rem;
+}
+
+.navbar-background-color {
+    background-color: #d4e3ef;
+}
+
+/* Bootstrap */
+.form-control-xsm {
+    height: calc(1.5em + 0.09rem + 2px);
+    padding: .25rem .5rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+}
+
+textarea {
+    resize: none;
+}
+
+@media (min-width: 768px) {
+    .w-md-100 {
+        width: 100% !important;
+    }
+}

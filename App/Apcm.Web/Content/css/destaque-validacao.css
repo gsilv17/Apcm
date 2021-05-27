@@ -1,0 +1,15 @@
+﻿.ts-destaque-validacao {
+    /* Identificador para destaque de validação de campos */
+}
+
+.ts-destaque-validacao-submit {
+    /* Identificador para destaque de validação do botão submit */
+}
+
+.ts-destaque-validacao.success {
+    border-left: 5px solid #28a745;
+}
+
+.ts-destaque-validacao.danger {
+    border-left: 5px solid #dc3545;
+}

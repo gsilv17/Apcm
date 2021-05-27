@@ -1,0 +1,1 @@
+﻿Delete From TSamsF3User Where [Login] = @Login

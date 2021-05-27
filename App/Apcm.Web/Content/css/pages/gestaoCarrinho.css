@@ -1,0 +1,9 @@
+textarea {
+    height: 70px !important;
+}
+
+.scroll-box {
+    height: 450px;
+    width: 100%;
+    overflow-x: auto;
+}

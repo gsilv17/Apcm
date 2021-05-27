@@ -1,0 +1,1 @@
+﻿Update logTSamsF1 Set dhFim = GETDATE(), resultado = @p0, registros = @p1 Where idLog = @p2

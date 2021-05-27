@@ -1,0 +1,1 @@
+﻿Select [Admin], [Editor], [Atacado], [Varejo] From TSamsF3User Where [Login] = @Login

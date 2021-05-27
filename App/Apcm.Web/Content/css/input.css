@@ -1,0 +1,38 @@
+﻿.ts-input-numerico {
+    /*
+        Permite KeyDown numérico (Teclas de controle + CTRL (A, C, V, X, Z) + Números).
+        Bloqueia KeyDown não numérico.
+    */
+}
+
+.ts-input-decimal {
+    /*
+        Permite KeyDown decimal (Teclas de controle + CTRL (A, C, V, X, Z) + Números + Vírgula + Ponto).
+        Bloqueia KeyDown não Decimal.
+    */
+}
+
+.ts-input-telefone {
+    /*
+        Permite KeyDown para telefone (Teclas de controle + CTRL (A, C, V, X, Z) + Números + Espaço + Parênteses + Traço).
+        Bloqueia KeyDown não telefonico.
+    */
+}
+
+.ts-input-cpf {
+    /*
+        Permite KeyDown CPF (Teclas de controle + CTRL (A, C, V, X, Z) + Números + Traço + Ponto).
+        Bloqueia KeyDown não CPF.
+    */
+}
+
+.ts-input-datepicker {
+    /*
+        Ativa o uso de Datepicker em textbox.
+        OBS.: Incluir input-daterange para compor um range de datas.
+    */
+}
+
+.datepicker {
+    z-index: 1050 !important;
+}

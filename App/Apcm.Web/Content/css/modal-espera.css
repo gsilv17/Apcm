@@ -1,0 +1,79 @@
+﻿
+/* Modal Espera */
+
+.ts-modal-espera-click {
+    /* Indicador para abertura de modal espera no evento click */
+}
+
+
+.ts-modal-espera {
+    /* ponto de acesso para backdrop e box */
+}
+
+.modal-espera-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2000;
+    background-color: #ffffff;
+}
+
+.modal-espera-backdrop.show {
+    opacity: 0;
+    display: block;
+    animation-name: modal-espera-backdrop-show;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-delay: 3s;
+    animation-duration: 5s;
+}
+
+@keyframes modal-espera-backdrop-show {
+    to {
+        opacity: .5;
+    }
+}
+
+.modal-espera-box {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2010;
+}
+
+.modal-espera-box.show {
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: modal-espera-box-show;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-delay: 5s;
+    animation-duration: 3s;
+}
+
+@keyframes modal-espera-box-show {
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-espera-content {
+    border: 1px solid #dee2e6;
+    border-radius: 2px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+}

@@ -1,0 +1,6 @@
+DSN5
+	gsilv17 wal2009
+
+SQL
+	LBRNT575515BRA.br.wal-mart.com SAMS_DEV
+	PBRNT18500BR.br.wal-mart.com bif_etl  bif_etl#2019

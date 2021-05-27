@@ -1,0 +1,1 @@
+﻿Update TSamsF3User Set [Admin] = @Admin, [Editor] = @Editor, [Atacado] = @atacado, [Varejo] = @varejo Where [Login] = @Login

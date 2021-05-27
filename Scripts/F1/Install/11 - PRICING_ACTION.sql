@@ -1,0 +1,57 @@
+
+go
+print 'F1 - 11'
+go
+
+/****** Object:  Table [dbo].[PRICING_ACTION]    Script Date: 24/01/2020 14:21:15 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PRICING_ACTION]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[PRICING_ACTION](
+	[RowId] [int] IDENTITY(1,1) NOT NULL,
+	[IdLoad] [int] NULL,
+	[PRICING_ACTION_ID] [int] NULL,
+	[PRICE_TYPE_CODE] [int] NULL,
+	[PRICING_REASON_CD] [int] NULL,
+	[EFFECTIVE_DATE] [date] NULL,
+	[EXPIRATION_DATE] [date] NULL,
+	[COST_TYPE_CODE] [int] NULL,
+	[ITEM_SOURCE_ID] [int] NULL,
+	[ITEM_SOURCE_TYPE] [int] NULL,
+	[PRICE_DEST_ID] [int] NULL,
+	[PRICE_DEST_TYPE] [int] NULL,
+	[UOM_CODE] [nchar](2) NULL,
+	[PRICING_QTY] [int] NULL,
+	[CALC_FORMAT_CODE] [int] NULL,
+	[CALC_VALUE] [numeric](13, 4) NULL,
+	[PRICE_ACTN_STAT_CD] [int] NULL,
+	[LAST_CHANGE_USERID] [nchar](10) NULL,
+	[MAINT_METHOD_IND] [nchar](1) NULL,
+	[LAST_CHANGE_TS] [datetime2](7) NULL,
+	[PROCESS_TS] [datetime2](7) NULL,
+	[CREATOR_ID] [nchar](10) NULL,
+	[VNPK_PPD_COST_AMT] [numeric](13, 4) NULL,
+	[VNPK_COL_COST_AMT] [numeric](13, 4) NULL,
+	[BU_VNPK_COST_IND] [nchar](1) NULL,
+	[MARGIN_RULE_ID] [int] NULL,
+	[PRICE_POINT_ID] [int] NULL,
+	[RULE_RESTR_SEQ_NBR] [int] NULL,
+	[PA_CREATE_TS] [datetime2](7) NULL,
+	[PRICING_SOURCE_NM] [nchar](10) NULL,
+	[NOTIFY_STORE_IND] [nchar](1) NULL,
+	[CUST_BASE_RTL_AMT] [numeric](11, 2) NULL,
+	[LAST_UPDATE_PGM_ID] [nchar](10) NULL,
+	[NATL_LST_PRICE_AMT] [numeric](13, 4) NULL,
+	[BRKT_PRICE_AMT] [numeric](13, 4) NULL,
+	[RTL_REC_CREATE_STATUS_CD] [int] NULL,
+	[LINKED_PRICING_ACTION_ID] [int] NULL
+) ON [PRIMARY]
+END
+GO
+
+

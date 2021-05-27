@@ -1,0 +1,1 @@
+﻿Select Valor From ParametrosTSamsF1 Where Nome = 'LoadInicial'

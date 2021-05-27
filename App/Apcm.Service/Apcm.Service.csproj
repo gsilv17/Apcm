@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D53B61EB-1030-4835-A7E6-15C641B718B0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Apcm.Service</RootNamespace>
+    <AssemblyName>Apcm.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev|AnyCPU'">
+    <OutputPath>bin\Dev\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Uat|AnyCPU'">
+    <OutputPath>bin\Uat\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prd|AnyCPU'">
+    <OutputPath>bin\Prd\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.95.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.95.4\lib\net46\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.13.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.13.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.5.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppUser\AppUserScripts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppUserScripts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Carrinho\CarrinhoItemData.cs" />
+    <Compile Include="Carrinho\CarrinhoData.cs" />
+    <Compile Include="Carrinho\CarrinhoRepository.cs" />
+    <Compile Include="Carrinho\CarrinhoScripts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarrinhoScripts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Carrinho\ICarrinhoService.cs" />
+    <Compile Include="Carrinho\CarrinhoService.cs" />
+    <Compile Include="Cross\CrossData.cs" />
+    <Compile Include="Cross\CrossRepository.cs" />
+    <Compile Include="Cross\CrossScripts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrossScripts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Cross\CrossService.cs" />
+    <Compile Include="Cross\ICrossService.cs" />
+    <Compile Include="Data\DataExtension.cs" />
+    <Compile Include="Data\DataParam.cs" />
+    <Compile Include="Data\DataContext.cs" />
+    <Compile Include="Data\DataRepository.cs" />
+    <Compile Include="Data\DataService.cs" />
+    <Compile Include="Data\DataTransaction.cs" />
+    <Compile Include="EstruturaMercadologica\EstruturaMercadologicaRepository.cs" />
+    <Compile Include="EstruturaMercadologica\EstruturaMercadologicaData.cs" />
+    <Compile Include="EstruturaMercadologica\EstruturaMercadologicaScripts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstruturaMercadologicaScripts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="EstruturaMercadologica\IEstruturaMercadologicaService.cs" />
+    <Compile Include="EstruturaMercadologica\EstruturaMercadologicaService.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Item\ItemData.cs" />
+    <Compile Include="Item\ItemRepository.cs" />
+    <Compile Include="Item\IItemService.cs" />
+    <Compile Include="Item\ItemScripts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemScripts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Item\ItemService.cs" />
+    <Compile Include="Log\LogRepository.cs" />
+    <Compile Include="Log\ILogService.cs" />
+    <Compile Include="Log\LogScripts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogScripts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Log\LogService.cs" />
+    <Compile Include="Lote\ILoteService.cs" />
+    <Compile Include="Lote\LoteData.cs" />
+    <Compile Include="Lote\LoteRepository.cs" />
+    <Compile Include="Lote\LoteScripts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoteScripts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Lote\LoteService.cs" />
+    <Compile Include="Mapa\IMapaService.cs" />
+    <Compile Include="Mapa\MapaData.cs" />
+    <Compile Include="Mapa\MapaRepository.cs" />
+    <Compile Include="Mapa\MapaScripts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MapaScripts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Mapa\MapaService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="InternalServices.cs" />
+    <Compile Include="RetornoSAD\IResultSearch.cs" />
+    <Compile Include="RetornoSAD\ResultSearchService.cs" />
+    <Compile Include="RetornoSAD\ResultSearchData.cs" />
+    <Compile Include="RetornoSAD\ResultSearchRepository.cs" />
+    <Compile Include="RetornoSAD\SearchScripts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchScripts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Sad\LoteDetalhe.cs" />
+    <Compile Include="Sad\ProdutoData.cs" />
+    <Compile Include="Sad\SadService.cs" />
+    <Compile Include="InternalRepositories.cs" />
+    <Compile Include="Services.cs" />
+    <Compile Include="AppUser\AppUserData.cs" />
+    <Compile Include="AppUser\AppUserRepository.cs" />
+    <Compile Include="AppUser\IAppUserService.cs" />
+    <Compile Include="AppUser\AppUserService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AppUser\AppUserScripts.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppUserScripts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Carrinho\CarrinhoScripts.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CarrinhoScripts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cross\CrossScripts.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CrossScripts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EstruturaMercadologica\EstruturaMercadologicaScripts.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>EstruturaMercadologicaScripts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\ItemScripts.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ItemScripts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log\LogScripts.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LogScripts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lote\LoteScripts.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LoteScripts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapa\MapaScripts.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MapaScripts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RetornoSAD\SearchScripts.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SearchScripts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Carrinho\CarrinhoScripts\AtualizarValidacaoTemplate.sql" />
+    <Content Include="Carrinho\CarrinhoScripts\CriarCarrinhoNovo.sql" />
+    <Content Include="Carrinho\CarrinhoScripts\CriarCarrinhoSad.sql" />
+    <Content Include="Carrinho\CarrinhoScripts\CriarCarrinhoDessinc.sql" />
+    <Content Include="Carrinho\CarrinhoScripts\DownloadCardCarrinho.sql" />
+    <Content Include="Carrinho\CarrinhoScripts\DownloadCardComCross.sql" />
+    <Content Include="Carrinho\CarrinhoScripts\PesquisarGestaoCarrinho.sql" />
+    <Content Include="Carrinho\CarrinhoScripts\DownloadCardErroRetorno.sql" />
+    <Content Include="Carrinho\CarrinhoScripts\DownloadCardCross.sql" />
+    <Content Include="Carrinho\CarrinhoScripts\ObterContagemCardHome.sql" />
+    <Content Include="Carrinho\CarrinhoScripts\RemoverCarrinhoItem.sql" />
+    <Content Include="Carrinho\CarrinhoScripts\AtualizarDescrEstrutura.sql" />
+    <Content Include="Carrinho\CarrinhoScripts\CarrinhosDisponiveis.sql" />
+    <Content Include="Carrinho\CarrinhoScripts\CarrinhoDataLoad.sql" />
+    <Content Include="Carrinho\CarrinhoScripts\AtualizarCarrinho.sql" />
+    <Content Include="Carrinho\CarrinhoScripts\ObterCarrinhoItemEnvio.sql" />
+    <Content Include="Carrinho\CarrinhoScripts\ItensCarrinhoDisponivel.sql" />
+    <Content Include="Carrinho\CarrinhoScripts\ObterCarrinho.sql" />
+    <Content Include="Carrinho\CarrinhoScripts\ObterEdicao.sql" />
+    <Content Include="Carrinho\CarrinhoScripts\ObterExportacao.sql" />
+    <Content Include="Cross\Scripts\RegistrarLoteDessincSadReport.sql" />
+    <Content Include="Cross\Scripts\ObterDessincSadReport.sql" />
+    <Content Include="Cross\Scripts\AtualizarDessincSadReport.sql" />
+    <Content Include="Cross\Scripts\PesquisaDessinc.sql" />
+    <Content Include="Cross\Scripts\ExisteLog.sql" />
+    <Content Include="Cross\Scripts\Localizar.sql" />
+    <Content Include="Cross\Scripts\DessincLocal.sql" />
+    <Content Include="Cross\Scripts\RegistrarCross.sql" />
+    <Content Include="EstruturaMercadologica\EstruturaMercadologicaScripts\ObterEstruturaSad.sql" />
+    <Content Include="EstruturaMercadologica\EstruturaMercadologicaScripts\ObterSublinhas.sql" />
+    <Content Include="EstruturaMercadologica\EstruturaMercadologicaScripts\ObterLinhas.sql" />
+    <Content Include="EstruturaMercadologica\EstruturaMercadologicaScripts\ObterSecoes.sql" />
+    <Content Include="EstruturaMercadologica\EstruturaMercadologicaScripts\ObterEstruturaSams.sql" />
+    <Content Include="Item\ItemScripts\ContagemPesquisaPrateleira.sql" />
+    <Content Include="Item\ItemScripts\PesquisaPrateleira.sql" />
+    <Content Include="Log\Scripts\RegistrarLogFixo.sql" />
+    <Content Include="Log\Scripts\RegistrarLog.sql" />
+    <Content Include="Lote\LoteScripts\ContagemConsultaLote.sql" />
+    <Content Include="Lote\LoteScripts\ConsultaLoteExportacao.sql" />
+    <Content Include="Lote\LoteScripts\ConsultaLote.sql" />
+    <Content Include="Lote\LoteScripts\ObterStatusItem.sql" />
+    <Content Include="Lote\LoteScripts\RegistrarCarrinhoDessinc.sql" />
+    <Content Include="Lote\LoteScripts\RegistrarStatusRetornoErro.sql" />
+    <Content Include="Lote\LoteScripts\RegistrarCarrinhoItemLote.sql" />
+    <Content Include="Lote\LoteScripts\ConfirmarLote.sql" />
+    <Content Include="Lote\LoteScripts\LotesPendentes.sql" />
+    <Content Include="Lote\LoteScripts\UltimoLote.sql" />
+    <Content Include="Lote\LoteScripts\Incluir.sql" />
+    <Content Include="Mapa\MapaScripts\MapaJSon.sql" />
+    <Content Include="Mapa\MapaScripts\MapaTemplate.sql" />
+    <Content Include="Mapa\MapaScripts\MapaCarrinhoItem.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchFiltroStatus.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturnSuccessNoFilters.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturnMsgRetornoLogin.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturnMsgRetoroLote.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturnByMsgRetorno.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturnFull.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturnErrorNoFilters.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturnNoFilters.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturnByLote.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturnByLogin.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturnStatusItemErrorMsgRetornoLogin.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturnStatusItemErrorMsgRetornoLote.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturnStatusItemErrorByMsgRetorno.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturnStatusItemErrorFull.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturnStatusItemErrorByLote.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturnStatusItemErrorByLogin.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturnStatusItemSuccessMsgRetornoLogin.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturnStatusItemSuccessMsgRetornoLote.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturnStatusItemSuccessByMsgRetorno.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturnStatusItemSuccessFull.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturnStatusItemSuccessByLote.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturnStatusItemSuccessByLogin.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturnStatusItemSuccess.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturnStatusItemError.sql" />
+    <Content Include="RetornoSAD\SearchScripts\SearchReturn.sql" />
+    <Content Include="AppUser\AppUserScripts\AtualizarLoginSad.sql" />
+    <Content Include="AppUser\AppUserScripts\Atualizar.sql" />
+    <Content Include="AppUser\AppUserScripts\Excluir.sql" />
+    <Content Include="AppUser\AppUserScripts\Incluir.sql" />
+    <Content Include="AppUser\AppUserScripts\Localizar.sql" />
+    <Content Include="AppUser\AppUserScripts\ObterPerfil.sql" />
+    <Content Include="AppUser\AppUserScripts\Verificar.sql" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

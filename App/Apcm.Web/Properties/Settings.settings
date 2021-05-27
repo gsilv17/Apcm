@@ -1,0 +1,47 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Apcm.Web.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DomainServer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Wal-Mart.com</Value>
+    </Setting>
+    <Setting Name="SessionUser" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SessionUser</Value>
+    </Setting>
+    <Setting Name="maxItensCarrinho" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="filesVirtualPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/Content/files</Value>
+    </Setting>
+    <Setting Name="SadBuscaProdutos" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">buscarItens</Value>
+    </Setting>
+    <Setting Name="SadIncluirSolicitacao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">incluirSolicitacaoSams</Value>
+    </Setting>
+    <Setting Name="SadConsultaLote" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">consultarLote/{0}</Value>
+    </Setting>
+    <Setting Name="SadConsultaDetalhe" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">consultarLote/detalhe/{0}</Value>
+    </Setting>
+    <Setting Name="SadBaseUrlAtacado" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://sadsams-uat-app01.br.wal-mart.com:8080/fep/v1/</Value>
+    </Setting>
+    <Setting Name="SadDessinc" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">incluirSolicitacao/DESINCITEM</Value>
+    </Setting>
+    <Setting Name="DataContext" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=LBRNT575515BRA.br.wal-mart.com;Initial Catalog=SAMS_UAT;Persist Security Info=False;User ID=usrTransSams;Password=usrTransSamspwd&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=LBRNT575515BRA.br.wal-mart.com;Initial Catalog=SAMS_UAT;Persist Security Info=False;User ID=usrTransSams;Password=usrTransSamspwd</Value>
+    </Setting>
+    <Setting Name="SadBaseUrlVarejo" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://sad-uat-app01.br.wal-mart.com:8080/fep/v1/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

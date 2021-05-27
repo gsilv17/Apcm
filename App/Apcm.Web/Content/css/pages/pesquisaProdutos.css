@@ -1,0 +1,38 @@
+textarea {
+    height: 70px !important;
+}
+
+.scroll-box {
+    height: 450px;
+    width: 100%;
+    overflow-x: auto;
+}
+
+
+@media (min-width: 768px) {
+    .col-md-3-lateral {
+        -ms-flex: 0 0 47%;
+        flex: 0 0 47%;
+        max-width: 47%;
+    }
+
+    .col-md-3-central {
+        -ms-flex: 0 0 6%;
+        flex: 0 0 6%;
+        max-width: 6%;
+    }
+}
+
+.col-md-3-lateral {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-md-3-central {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}

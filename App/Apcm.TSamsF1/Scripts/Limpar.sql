@@ -1,0 +1,1 @@
+﻿Truncate Table {0}

@@ -1,0 +1,260 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Apcm.Web.Pages.Layout.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server" lang="pt-br">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %></title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/Content/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="~/Content/lib/twitter-bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/lib/bootstrap-datepicker/css/bootstrap-datepicker.standalone.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/site.css" />
+
+    <asp:ContentPlaceHolder ID="headPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <div id="modalEsperaBackdrop" class="modal-espera-backdrop ts-modal-espera"></div>
+    <div id="modalEsperaBox" class="modal-espera-box ts-modal-espera">
+        <div class="modal-espera-content">
+            Aguardando...
+        </div>
+    </div>
+
+    <form id="mainForm" runat="server">
+
+        <asp:ScriptManager ID="MainScriptManager" runat="server" EnablePageMethods="true" AsyncPostBackTimeout="600"></asp:ScriptManager>
+
+        <header>
+
+            <nav class="navbar navbar-expand-md navbar-light bg-light" style="background-color: #d4e3ef">
+
+                <asp:HyperLink runat="server" NavigateUrl="~/Home" CssClass="navbar-brand ts-modal-espera-click">
+                    <img src="<%: Page.ResolveUrl("~/Content/images/lg.svg") %>" width="30" height="30" class="d-inline-block align-top" alt="" />
+                    Ferramenta de cadastro e manutenção massiva de produtos
+                </asp:HyperLink>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        
+                        <li class="nav-item dropdown">
+                            <asp:HyperLink runat="server" NavigateUrl="#" ID="MenuAdministrador" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" CssClass="nav-link dropdown-toggle">
+                            Administrador
+                            </asp:HyperLink>
+                            <ul class="dropdown-menu" aria-labelledby="MenuAdministrador">
+                                <asp:HyperLink runat="server" NavigateUrl="~/ControleAcesso" CssClass="dropdown-item ts-modal-espera-click">Controle de Acesso</asp:HyperLink>
+                                <%--<asp:HyperLink runat="server" NavigateUrl="~/GestaoCarrinho" CssClass="dropdown-item ts-modal-espera-click">Gestão de Carrinhos</asp:HyperLink>--%>
+                                
+                                <asp:HyperLink runat="server" ID="MenuDessinc" NavigateUrl="~/Dessinc" CssClass="dropdown-item ts-modal-espera-click">Dessincronização</asp:HyperLink>
+                                
+                                <asp:HyperLink runat="server" NavigateUrl="~/PesquisaDessinc" CssClass="dropdown-item ts-modal-espera-click">Pesquisa de Dessincronização</asp:HyperLink>
+                            </ul>
+
+                        </li>
+
+                        <li class="nav-item dropdown" runat="server" id="MenuAtacado">
+                            <a href="#" class="nav-link dropdown-toggle" id="navBarAtacado" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Sam's
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navBarAtacado">
+                                <li class="dropdown-submenu">
+                                    
+                                    <div class="dropdown-item dropdown-toggle">
+                                        Manutenção Massiva
+                                    </div>
+                                    
+                                    <ul class="dropdown-menu dropdown-menu-hover" >
+                                        <li><asp:LinkButton runat="server" ID="PesquisaProdutosAtacado" CssClass="dropdown-item ts-modal-espera-click" Text="Pesquisa de Produtos" OnClick="PesquisaProdutos_Click" CommandArgument="Atacado"></asp:LinkButton></li>
+                                        <li><asp:LinkButton runat="server" ID="CarrinhoAtacado" CssClass="dropdown-item ts-modal-espera-click" Text="Carrinho" OnClick="Carrinho_Click" CommandArgument="Atacado"></asp:LinkButton></li>
+                                        <li><asp:LinkButton runat="server" ID="ConsultaLotesManutencaoAtacado" CssClass="dropdown-item ts-modal-espera-click" Text="Consulta de Lotes" OnClick="ConsultaLotesManutencao_Click" CommandArgument="Atacado"></asp:LinkButton></li>
+                                        <%--<li><asp:LinkButton runat="server" ID="LinkButton7" CssClass="dropdown-item ts-modal-espera-click" Text="Gestão de Carrinhos" OnClick="GestaoCarrinho_Click" CommandArgument="Atacado"></asp:LinkButton></li>--%>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown-submenu">
+                                    <div class="dropdown-item dropdown-toggle" >
+                                        Criação Massiva
+                                    </div>
+                                    <ul class="dropdown-menu dropdown-menu-hover">
+                                        <li><asp:LinkButton runat="server" ID="LinkButton8" CssClass="dropdown-item ts-modal-espera-click" Text="Criação de Novos Produtos" OnClick="NovosProdutos_Click" CommandArgument="Atacado"></asp:LinkButton></li>
+                                        <li><asp:LinkButton runat="server" ID="ConsultaLotesNovoAtacado" CssClass="dropdown-item ts-modal-espera-click" Text="Consulta de Lotes" OnClick="ConsultaLotesNovo_Click" CommandArgument="Atacado"></asp:LinkButton></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown" runat="server" id="MenuVarejo">
+                            <a href="#" class="nav-link dropdown-toggle" id="navBarVarejo" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Varejo
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navBarVarejo">
+                                <li class="dropdown-submenu">
+                                    
+                                    <div class="dropdown-item dropdown-toggle">
+                                        Manutenção Massiva
+                                    </div>
+                                    
+                                    <ul class="dropdown-menu dropdown-menu-hover" >
+                                        <li><asp:LinkButton runat="server" ID="LinkButton1" CssClass="dropdown-item ts-modal-espera-click" Text="Pesquisa de Produtos" OnClick="PesquisaProdutos_Click" CommandArgument="Varejo"></asp:LinkButton></li>
+                                        <li><asp:LinkButton runat="server" ID="LinkButton2" CssClass="dropdown-item ts-modal-espera-click" Text="Carrinho" OnClick="Carrinho_Click" CommandArgument="Varejo"></asp:LinkButton></li>
+                                        <li><asp:LinkButton runat="server" ID="LinkButton3" CssClass="dropdown-item ts-modal-espera-click" Text="Consulta de Lotes" OnClick="ConsultaLotesManutencao_Click" CommandArgument="Varejo"></asp:LinkButton></li>
+                                        <%--<li><asp:LinkButton runat="server" ID="LinkButton6" CssClass="dropdown-item ts-modal-espera-click" Text="Gestão de Carrinhos" OnClick="GestaoCarrinho_Click" CommandArgument="Varejo"></asp:LinkButton></li>--%>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown-submenu">
+                                    <div class="dropdown-item dropdown-toggle" >
+                                        Criação Massiva
+                                    </div>
+                                    <ul class="dropdown-menu dropdown-menu-hover">
+                                        <li><asp:LinkButton runat="server" ID="LinkButton9" CssClass="dropdown-item ts-modal-espera-click" Text="Criação de Novos Produtos" OnClick="NovosProdutos_Click" CommandArgument="Varejo"></asp:LinkButton></li>
+                                        <li><asp:LinkButton runat="server" ID="LinkButton5" CssClass="dropdown-item ts-modal-espera-click" Text="Consulta de Lotes" OnClick="ConsultaLotesNovo_Click" CommandArgument="Varejo"></asp:LinkButton></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="dropdown">
+                    <span class="navbar-text" style="cursor: pointer" id="dropdownUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="<%: Page.ResolveUrl("~/Content/images/user.svg") %>" class="d-inline-block align-top" alt="" />
+                        <asp:Label ID="Nome" runat="server" CssClass="dropdown-toggle"></asp:Label>
+                    </span>
+                    <div class="dropdown-menu text-center" style="right: 2px; left: unset;" aria-labelledby="dropdownUser">
+                        <asp:LinkButton ID="atualizarPerfil" runat="server" OnClick="atualizarPerfil_Click" Text="Atualizar Perfil" CssClass="ts-modal-espera-click"></asp:LinkButton>
+                    </div>
+                </div>
+            </nav>
+
+            <%-- 
+
+            <nav class="navbar navbar-expand-md navbar-light" style="background-color: #d4e3ef">
+                <asp:HyperLink runat="server" NavigateUrl="~/Home" CssClass="navbar-brand ts-modal-espera-click">
+                <img src="<%: Page.ResolveUrl("~/Content/images/lg.svg") %>" width="30" height="30" class="d-inline-block align-top" alt="" />
+                Apoio à Gestão de Cadastro de Produtos
+                </asp:HyperLink>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+
+                        <% if (UserData.Admin)
+                            { %>
+                        <li class="nav-item dropdown <%= Page.Title == "Controle de Acesso" || Page.Title == "Gestão de Carrinhos" ? "active" : "" %>">
+                            <asp:HyperLink runat="server" NavigateUrl="#" ID="navBarAdministrador" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" CssClass="nav-link dropdown-toggle">
+                            Administrador
+                            </asp:HyperLink>
+
+                            <div class="dropdown-menu" aria-labelledby="navBarAdministrador" style="z-index: 2000 !important">
+                                <asp:HyperLink runat="server" NavigateUrl="~/ControleAcesso" CssClass="dropdown-item ts-modal-espera-click">Controle de Acesso</asp:HyperLink>
+                                <asp:HyperLink runat="server" NavigateUrl="~/GestaoCarrinho" CssClass="dropdown-item ts-modal-espera-click">Gestão de Carrinhos</asp:HyperLink>
+                                <% if(UserData.Login == "gsilv18" || UserData.Login == "eferr12" || UserData.Login == "jborner") { %>
+                                <asp:HyperLink runat="server" NavigateUrl="~/Dessinc" CssClass="dropdown-item ts-modal-espera-click">Dessincronização</asp:HyperLink>
+                                <% } %>
+                                <asp:HyperLink runat="server" NavigateUrl="~/PesquisaDessinc" CssClass="dropdown-item ts-modal-espera-click">Pesquisa de Dessincronização</asp:HyperLink>
+                            </div>
+                        </li>
+                        <%} %>
+
+                        <%if ((UserData.Editor || UserData.Admin) && UserData.Login == "Excluir")
+                            { %>
+                        <li class="nav-item dropdown <%: 
+                            Page.Title == "Pesquisa de Itens" ||
+                            Page.Title == "Carrinho" ||
+                            Page.Title == "Consulta de Lotes" ||
+                            Page.Title == "Gestão de Carrinhos" ? "active" : "" %>">
+                            <asp:HyperLink runat="server" NavigateUrl="#" ID="navBarTransicaoSams" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" CssClass="nav-link dropdown-toggle">
+                            Transição - Cadastro Sams
+                            </asp:HyperLink>
+
+                            <div class="dropdown-menu" aria-labelledby="navBarTransicaoSams" style="z-index: 2000 !important">
+                                <asp:HyperLink runat="server" NavigateUrl="~/PesquisaItens" CssClass="dropdown-item ts-modal-espera-click">Pesquisa de Itens</asp:HyperLink>
+                                <asp:LinkButton runat="server" ID="CarrinhoSams" CssClass="dropdown-item ts-modal-espera-click" Text="Carrinho" OnClick="CarrinhoSams_Click"></asp:LinkButton>
+                                <asp:HyperLink runat="server" NavigateUrl="~/ConsultaLotes" CssClass="dropdown-item ts-modal-espera-click">Consulta de Lotes</asp:HyperLink>
+                                <asp:HyperLink runat="server" NavigateUrl="~/GestaoCarrinho" CssClass="dropdown-item ts-modal-espera-click">Gestão de Carrinhos</asp:HyperLink>
+                            </div>
+                        </li>
+
+                        <% } %>
+
+
+                      
+
+                        
+                        <%if (UserData.Editor || UserData.Admin) 
+                            { %>
+                        <li class="nav-item dropdown <%: 
+                            Page.Title == "Pesquisa de Produtos" ||     
+                            Page.Title == "Carrinho" ||
+                            Page.Title == "Consulta de Lotes" || 
+                            Page.Title == "Gestão de Carrinhos" ? "active" : "" %>">
+                            <asp:HyperLink runat="server" NavigateUrl="#" ID="navBarCargaMassivaCadPr" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" CssClass="nav-link dropdown-toggle">
+                            Manutenção Massiva 
+                            </asp:HyperLink>
+
+                            <div class="dropdown-menu" aria-labelledby="navBarCargaMassivaCadPr" style="z-index: 2000 !important">
+                                <asp:HyperLink runat="server" NavigateUrl="~/PesquisaProdutos" CssClass="dropdown-item ts-modal-espera-click">Pesquisa de Produtos</asp:HyperLink>
+                                <asp:LinkButton runat="server" ID="CarrinhoSad" CssClass="dropdown-item ts-modal-espera-click" Text="Carrinho" OnClick="CarrinhoSad_Click"></asp:LinkButton>
+                                <asp:LinkButton runat="server" ID="ConsultaLotesSad" CssClass="dropdown-item ts-modal-espera-click" Text="Consulta de Lotes" OnClick="ConsultaLotesSad_Click"></asp:LinkButton>
+                                <asp:HyperLink runat="server" NavigateUrl="~/GestaoCarrinho" CssClass="dropdown-item ts-modal-espera-click">Gestão de Carrinhos</asp:HyperLink>
+                            </div>
+                        </li>
+
+                        <% if(UserData.Login == "gsilv17" || UserData.Login == "eferr12") { %>
+                        <li class="nav-item dropdown <%: 
+                            Page.Title == "Criação de Novos Produtos" ||     
+                            Page.Title == "Consulta de Lotes" ? "active" : "" %>">
+                            <asp:HyperLink runat="server" NavigateUrl="#" ID="navBarCriacaoMassiva" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" CssClass="nav-link dropdown-toggle">
+                            Criação Massiva
+                            </asp:HyperLink>
+
+                            <div class="dropdown-menu" aria-labelledby="navBarCriacaoMassiva" style="z-index: 2000 !important">
+                                <asp:HyperLink runat="server" NavigateUrl="~/NovosProdutos" CssClass="dropdown-item ts-modal-espera-click">Criação de Novos Produtos</asp:HyperLink>
+                                <asp:LinkButton runat="server" ID="ConsultaLotesNovo" CssClass="dropdown-item ts-modal-espera-click" Text="Consulta de Lotes" OnClick="ConsultaLotesNovo_Click"></asp:LinkButton>
+                            </div>
+                        </li>
+                        <%} %>
+
+                        <%} %>
+                    </ul>
+
+                </div>
+
+                
+            </nav>
+
+             --%>
+
+        </header>
+
+        <main>
+            <asp:ContentPlaceHolder ID="bodyPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+
+        <footer>
+        </footer>
+    </form>
+
+    <script type="text/javascript" src="<%: Page.ResolveUrl("~/Content/lib/jquery/jquery.min.js") %>"></script>
+    <script type="text/javascript" src="<%: Page.ResolveUrl("~/Content/lib/popper.js/umd/popper.min.js") %>"></script>
+    <script type="text/javascript" src="<%: Page.ResolveUrl("~/Content/lib/twitter-bootstrap/js/bootstrap.min.js") %>"></script>
+    <script type="text/javascript" src="<%: Page.ResolveUrl("~/Content/lib/bootstrap-datepicker/js/bootstrap-datepicker.min.js") %>"></script>
+    <script type="text/javascript" src="<%: Page.ResolveUrl("~/Content/lib/bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.min.js") %>"></script>
+    <script type="module" src="<%: Page.ResolveUrl("~/Content/js/site.js") %>"></script>
+
+    <asp:ContentPlaceHolder ID="scriptPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+
+</body>
+</html>

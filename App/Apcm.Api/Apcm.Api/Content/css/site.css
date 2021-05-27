@@ -1,0 +1,19 @@
+@import "material-icons.css";
+
+main {
+    padding: 1rem;
+    background-image: linear-gradient( #e9ecef, #ffffff);
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+}
+
+.header-image {
+    width: 30px;
+    height: 30px;
+}
+
+.navbar-background-color {
+    background-color: #d4e3ef;
+}

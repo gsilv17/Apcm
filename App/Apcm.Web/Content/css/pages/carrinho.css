@@ -1,0 +1,9 @@
+.ddl-carrinho {
+    width: 100% !important;
+}
+
+.scroll-box {
+    height: 350px;
+    width: 100%;
+    overflow-x: auto;
+}

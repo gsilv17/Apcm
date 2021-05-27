@@ -1,0 +1,7 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DSN5 ODBC"
+  DTS:DTSID="{FE527009-CDD9-49EF-88BA-E9DCF75F2A03}"
+  DTS:CreationName="ODBC"
+  p1:Salt="YspyAbXhTw=="
+  p1:IV="FTinP6SRthU=" xmlns:p1="www.microsoft.com/SqlServer/SSIS">t5k+VYbx8PVcHGmF4CDuh5XdkrwvC1bvE4U55JIiKodeiMnrMscXa3j8BTQ9cx19bcum76zr/A3lc+D3PYgD3aM5ybCbwzAzWsNSHJqwnL/V/unarKE2u6ALJd2/cmIFkXKraenk+wseBCXcYOCyaYXyyHaJ0UDsGKepGhz6qJTkklo7/2aMqtXIDnTRoNVUzKClRbVmLdp1mQ0XHumWWd2dwtbN6OIaZomKmvnY7/nwoyUzOS5fthJYBG9TDowiDPpqfHNmWx4oju/kwRkp6C35VQ09AW7/4VpzHx/8aP5xbsnkhFHJ4k96VfWEf8KFa2Z0LVQjxXWzY3Wh4yjLAIUKpcDM9/o0D9/in8Ti5L2/L9vhPorItndtzthOET9aiodX96NH2MEKetv13gMcYQ==</DTS:ConnectionManager>

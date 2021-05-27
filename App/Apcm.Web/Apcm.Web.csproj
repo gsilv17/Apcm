@@ -1,0 +1,495 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DB8B691F-E387-4B39-8282-ABAA1418E231}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Apcm.Web</RootNamespace>
+    <AssemblyName>Apcm.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\input.css" />
+    <Content Include="Content\css\grid.css" />
+    <Content Include="Content\css\menu.css" />
+    <Content Include="Content\css\material-icons.css" />
+    <Content Include="Content\css\modal-espera.css" />
+    <Content Include="Content\css\destaque-validacao.css" />
+    <Content Include="Content\css\pages\consultaLotes.css" />
+    <Content Include="Content\css\pages\novosProdutos.css" />
+    <Content Include="Content\css\pages\pesquisaDessinc.css" />
+    <Content Include="Content\css\pages\dessinc.css" />
+    <Content Include="Content\css\pages\pesquisaProdutos.css" />
+    <Content Include="Content\css\pages\controleAcesso.css" />
+    <Content Include="Content\css\pages\edicaoEnvioItens.css" />
+    <Content Include="Content\css\pages\gestaoCarrinho.css" />
+    <Content Include="Content\css\pages\carrinho.css" />
+    <Content Include="Content\css\pages\pesquisaItens.css" />
+    <Content Include="Content\css\site.css" />
+    <Content Include="Content\images\alert-triangle-danger.svg" />
+    <Content Include="Content\images\check-square.svg" />
+    <Content Include="Content\images\downloadDisabled.svg" />
+    <Content Include="Content\images\download.svg" />
+    <Content Include="Content\images\edit.svg" />
+    <Content Include="Content\images\favicon.ico" />
+    <Content Include="Content\images\lg.svg" />
+    <Content Include="Content\images\lg_big_h.svg" />
+    <Content Include="Content\images\lg_big_v.svg" />
+    <Content Include="Content\images\minus-square.svg" />
+    <Content Include="Content\images\plus-square.svg" />
+    <Content Include="Content\images\rotate-cw.svg" />
+    <Content Include="Content\images\search.svg" />
+    <Content Include="Content\images\send-danger.svg" />
+    <Content Include="Content\images\send-success.svg" />
+    <Content Include="Content\images\send.svg" />
+    <Content Include="Content\images\shopping-cart.svg" />
+    <Content Include="Content\images\trash-2.svg" />
+    <Content Include="Content\images\user-check.svg" />
+    <Content Include="Content\images\user.svg" />
+    <Content Include="Content\images\x-square-danger.svg" />
+    <Content Include="Content\js\pages\Dessinc.js" />
+    <Content Include="Content\js\pages\NovosProdutos.js" />
+    <Content Include="Content\js\pages\PesquisaDessinc.js" />
+    <Content Include="Content\js\pages\PesquisaProdutos.js" />
+    <Content Include="Content\js\pages\Carrinho.js" />
+    <Content Include="Content\js\pages\ControleAcesso.js" />
+    <Content Include="Content\js\pages\EdicaoEnvioItens.js" />
+    <Content Include="Content\js\pages\GestaoCarrinho.js" />
+    <Content Include="Content\js\pages\PesquisaItens.js" />
+    <Content Include="Content\js\pages\ConsultaLotes.js" />
+    <Content Include="Content\js\services\DestaqueValidacaoService.js" />
+    <Content Include="Content\js\services\InputService.js" />
+    <Content Include="Content\js\services\ModalEsperaService.js" />
+    <Content Include="Content\js\services\PageService.js" />
+    <Content Include="Content\js\services\UpdatePanelService.js" />
+    <Content Include="Content\js\Site.js" />
+    <Content Include="Content\lib\bootstrap-datepicker\css\bootstrap-datepicker.standalone.min.css" />
+    <Content Include="Content\lib\bootstrap-datepicker\js\bootstrap-datepicker.min.js" />
+    <Content Include="Content\lib\bootstrap-datepicker\locales\bootstrap-datepicker.pt-BR.min.js" />
+    <Content Include="Content\lib\jquery\jquery.min.js" />
+    <Content Include="Content\lib\popper.js\umd\popper.min.js" />
+    <Content Include="Content\lib\twitter-bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\lib\twitter-bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\css\fonts\material-icons\filled.woff2" />
+    <Content Include="Content\css\fonts\material-icons\outlined.woff2" />
+    <Content Include="Content\css\fonts\material-icons\rounded.woff2" />
+    <Content Include="Content\css\fonts\material-icons\sharp.woff2" />
+    <Content Include="Content\css\fonts\material-icons\two-tone.woff2" />
+    <Content Include="Content\js\pages\Dessinc.js.map" />
+    <Content Include="Content\js\pages\PesquisaDessinc.js.map" />
+    <Content Include="Content\js\pages\NovosProdutos.js.map" />
+    <None Include="Content\Modules\node_modules\%40types\bootstrap-datepicker\LICENSE" />
+    <None Include="Content\Modules\node_modules\%40types\bootstrap-datepicker\package.json" />
+    <None Include="Content\Modules\node_modules\%40types\bootstrap-datepicker\README.md" />
+    <None Include="Content\Modules\node_modules\%40types\bootstrap\LICENSE" />
+    <None Include="Content\Modules\node_modules\%40types\bootstrap\package.json" />
+    <None Include="Content\Modules\node_modules\%40types\bootstrap\README.md" />
+    <None Include="Content\Modules\node_modules\%40types\jquery\LICENSE" />
+    <None Include="Content\Modules\node_modules\%40types\jquery\package.json" />
+    <None Include="Content\Modules\node_modules\%40types\jquery\README.md" />
+    <None Include="Content\Modules\node_modules\%40types\microsoft-ajax\LICENSE" />
+    <None Include="Content\Modules\node_modules\%40types\microsoft-ajax\package.json" />
+    <None Include="Content\Modules\node_modules\%40types\microsoft-ajax\README.md" />
+    <None Include="Content\Modules\node_modules\%40types\sizzle\LICENSE" />
+    <None Include="Content\Modules\node_modules\%40types\sizzle\package.json" />
+    <None Include="Content\Modules\node_modules\%40types\sizzle\README.md" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\esm\popper-utils.js" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\esm\popper-utils.js.map" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\esm\popper-utils.min.js" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\esm\popper-utils.min.js.map" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\esm\popper.js" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\esm\popper.js.map" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\esm\popper.min.js" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\esm\popper.min.js.map" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\popper-utils.js" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\popper-utils.js.map" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\popper-utils.min.js" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\popper-utils.min.js.map" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\popper.js" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\popper.js.map" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\popper.min.js" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\popper.min.js.map" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\umd\popper-utils.js" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\umd\popper-utils.js.map" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\umd\popper-utils.min.js" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\umd\popper-utils.min.js.map" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\umd\popper.js" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\umd\popper.js.flow" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\umd\popper.js.map" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\umd\popper.min.js" />
+    <None Include="Content\Modules\node_modules\popper.js\dist\umd\popper.min.js.map" />
+    <None Include="Content\Modules\node_modules\popper.js\index.js.flow" />
+    <None Include="Content\Modules\node_modules\popper.js\package.json" />
+    <None Include="Content\Modules\node_modules\popper.js\README.md" />
+    <None Include="Content\Modules\node_modules\popper.js\src\index.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\methods\defaults.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\methods\destroy.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\methods\disableEventListeners.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\methods\enableEventListeners.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\methods\placements.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\methods\update.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\modifiers\applyStyle.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\modifiers\arrow.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\modifiers\computeStyle.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\modifiers\flip.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\modifiers\hide.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\modifiers\index.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\modifiers\inner.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\modifiers\keepTogether.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\modifiers\offset.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\modifiers\preventOverflow.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\modifiers\shift.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\clockwise.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\computeAutoPlacement.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\debounce.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\find.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\findCommonOffsetParent.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\findIndex.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getBordersSize.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getBoundaries.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getBoundingClientRect.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getClientRect.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getFixedPositionOffsetParent.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getOffsetParent.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getOffsetRect.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getOppositePlacement.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getOppositeVariation.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getOuterSizes.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getParentNode.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getPopperOffsets.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getReferenceNode.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getReferenceOffsets.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getRoot.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getRoundedOffsets.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getScroll.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getScrollParent.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getStyleComputedProperty.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getSupportedPropertyName.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getWindow.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\getWindowSizes.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\includeScroll.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\index.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\isBrowser.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\isFixed.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\isFunction.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\isIE.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\isModifierEnabled.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\isModifierRequired.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\isNumeric.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\isOffsetContainer.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\removeEventListeners.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\runModifiers.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\setAttributes.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\setStyles.js" />
+    <None Include="Content\Modules\node_modules\popper.js\src\utils\setupEventListeners.js" />
+    <None Include="Content\Modules\package-lock.json" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Pages\Dessinc.aspx" />
+    <Content Include="Pages\NovosProdutos.aspx" />
+    <Content Include="Pages\PesquisaDessinc.aspx" />
+    <Content Include="Pages\PesquisaProdutos.aspx" />
+    <Content Include="Pages\ConsultaRetornoSAD.aspx" />
+    <Content Include="Pages\ControleAcesso.aspx" />
+    <Content Include="Pages\Carrinho.aspx" />
+    <Content Include="Pages\GestaoCarrinho.aspx" />
+    <Content Include="Pages\PesquisaItens.aspx" />
+    <Content Include="Pages\ConsultaLotes.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dessinc.aspx.cs">
+      <DependentUpon>Dessinc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dessinc.aspx.designer.cs">
+      <DependentUpon>Dessinc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NovosProdutos.aspx.cs">
+      <DependentUpon>NovosProdutos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\NovosProdutos.aspx.designer.cs">
+      <DependentUpon>NovosProdutos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PesquisaDessinc.aspx.cs">
+      <DependentUpon>PesquisaDessinc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PesquisaDessinc.aspx.designer.cs">
+      <DependentUpon>PesquisaDessinc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PesquisaProdutos.aspx.cs">
+      <DependentUpon>PesquisaProdutos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PesquisaProdutos.aspx.designer.cs">
+      <DependentUpon>PesquisaProdutos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ConsultaRetornoSAD.aspx.cs">
+      <DependentUpon>ConsultaRetornoSAD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ConsultaRetornoSAD.aspx.designer.cs">
+      <DependentUpon>ConsultaRetornoSAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ControleAcesso.aspx.cs">
+      <DependentUpon>ControleAcesso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ControleAcesso.aspx.designer.cs">
+      <DependentUpon>ControleAcesso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Layout\Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Layout\Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Carrinho.aspx.cs">
+      <DependentUpon>Carrinho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Carrinho.aspx.designer.cs">
+      <DependentUpon>Carrinho.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GestaoCarrinho.aspx.cs">
+      <DependentUpon>GestaoCarrinho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\GestaoCarrinho.aspx.designer.cs">
+      <DependentUpon>GestaoCarrinho.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PesquisaItens.aspx.cs">
+      <DependentUpon>PesquisaItens.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PesquisaItens.aspx.designer.cs">
+      <DependentUpon>PesquisaItens.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Layout\AppPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ConsultaLotes.aspx.cs">
+      <DependentUpon>ConsultaLotes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ConsultaLotes.aspx.designer.cs">
+      <DependentUpon>ConsultaLotes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\js\pages\PesquisaProdutos.js.map" />
+    <Content Include="Content\js\pages\Carrinho.js.map" />
+    <Content Include="Content\js\pages\ConsultaLotes.js.map" />
+    <None Include="libman.json" />
+    <Content Include="Content\ts\tsconfig.json" />
+    <Content Include="Pages\Layout\Site.Master" />
+    <Content Include="Content\js\pages\ControleAcesso.js.map" />
+    <Content Include="Content\js\pages\EdicaoEnvioItens.js.map" />
+    <Content Include="Content\js\services\DestaqueValidacaoService.js.map" />
+    <Content Include="Content\js\services\InputService.js.map" />
+    <Content Include="Content\js\services\ModalEsperaService.js.map" />
+    <Content Include="Content\js\services\PageService.js.map" />
+    <Content Include="Content\js\services\UpdatePanelService.js.map" />
+    <Content Include="Content\js\Site.js.map" />
+    <Content Include="Content\js\pages\PesquisaItens.js.map" />
+    <Content Include="Content\lib\jquery\jquery.min.map" />
+    <Content Include="Content\lib\popper.js\umd\popper.min.js.map" />
+    <Content Include="Content\lib\twitter-bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\lib\twitter-bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Content\js\pages\GestaoCarrinho.js.map" />
+    <None Include="Properties\PublishProfiles\Dev.pubxml" />
+    <None Include="Properties\PublishProfiles\Prd.pubxml" />
+    <None Include="Properties\PublishProfiles\Uat.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Dev.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Prd.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Uat.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\files\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Apcm.Service\Apcm.Service.csproj">
+      <Project>{d53b61eb-1030-4835-a7e6-15c641b718b0}</Project>
+      <Name>Apcm.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Modules\node_modules\%40types\bootstrap\index.d.ts" />
+    <None Include="Content\Modules\node_modules\%40types\jquery\dist\jquery.slim.d.ts" />
+    <None Include="Content\Modules\node_modules\%40types\jquery\index.d.ts" />
+    <None Include="Content\Modules\node_modules\%40types\jquery\JQuery.d.ts" />
+    <None Include="Content\Modules\node_modules\%40types\jquery\JQueryStatic.d.ts" />
+    <None Include="Content\Modules\node_modules\%40types\jquery\legacy.d.ts" />
+    <None Include="Content\Modules\node_modules\%40types\jquery\misc.d.ts" />
+    <None Include="Content\Modules\node_modules\%40types\microsoft-ajax\index.d.ts" />
+    <None Include="Content\Modules\node_modules\%40types\sizzle\index.d.ts" />
+    <None Include="Content\Modules\node_modules\popper.js\index.d.ts" />
+    <None Include="Content\Modules\node_modules\%40types\bootstrap-datepicker\index.d.ts" />
+    <TypeScriptCompile Include="Content\ts\pages\ConsultaLotes.ts" />
+    <TypeScriptCompile Include="Content\ts\pages\Dessinc.ts" />
+    <TypeScriptCompile Include="Content\ts\pages\NovosProdutos.ts" />
+    <TypeScriptCompile Include="Content\ts\pages\PesquisaDessinc.ts" />
+    <TypeScriptCompile Include="Content\ts\pages\PesquisaProdutos.ts" />
+    <TypeScriptCompile Include="Content\ts\pages\ControleAcesso.ts" />
+    <TypeScriptCompile Include="Content\ts\pages\EdicaoEnvioItens.ts" />
+    <TypeScriptCompile Include="Content\ts\pages\Carrinho.ts" />
+    <TypeScriptCompile Include="Content\ts\pages\GestaoCarrinho.ts" />
+    <TypeScriptCompile Include="Content\ts\pages\PesquisaItens.ts" />
+    <TypeScriptCompile Include="Content\ts\services\DestaqueValidacaoService.ts" />
+    <TypeScriptCompile Include="Content\ts\services\InputService.ts" />
+    <TypeScriptCompile Include="Content\ts\services\ModalEsperaService.ts" />
+    <TypeScriptCompile Include="Content\ts\services\PageService.ts" />
+    <TypeScriptCompile Include="Content\ts\services\UpdatePanelService.ts" />
+    <TypeScriptCompile Include="Content\ts\Site.ts" />
+    <None Include="Content\Modules\web_modules\%40types\page\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Uat|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prd|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64605</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64605/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

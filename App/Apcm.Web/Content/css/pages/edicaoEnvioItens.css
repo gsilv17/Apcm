@@ -1,0 +1,76 @@
+.scroll-box {
+    height: 400px;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.modal-body .scroll-box {
+    overflow-x: hidden;
+}
+
+.scroll-box-alert {
+    height: 150px;
+    overflow-x: hidden;
+}
+
+.btn-img {
+    width: 17px;
+    height: 17px;
+}
+
+.item-btn {
+    padding: 3px !important;
+    vertical-align: bottom !important;
+}
+
+.sticky-left-2 {
+    left: 50px;
+}
+
+.sticky-left-3 {
+    left: 100px;
+}
+
+.sticky-left-4 {
+    left: 200px;
+}
+
+.sticky-top-left-2 {
+    left: 50px;
+    z-index: 1040;
+}
+
+.sticky-top-left-3 {
+    left: 100px;
+    z-index: 1040;
+}
+
+.sticky-top-left-4 {
+    left: 200px;
+    z-index: 1040;
+}
+
+.table-fixed td {
+    font-size: 12px;
+}
+
+.form-control-xsm {
+    height: calc(1.5em + 0.09rem + 2px);
+    padding: .25rem .5rem;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: .2rem;
+}
+
+.modal-footer .btn {
+    width: 75px;
+}
+
+input[type=submit].close {
+    border: none;
+    background-color: transparent;
+}
+
+.btn-large {
+    width: 100px;
+}

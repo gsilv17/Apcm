@@ -1,0 +1,1 @@
+﻿Update loadTSams Set dhF1Fim = GETDATE(), F1Resultado = @p0 where idLoad = @p1
