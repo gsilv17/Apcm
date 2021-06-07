@@ -22,6 +22,8 @@ namespace Apcm.Web.Pages
 
             ValidarAdmin();
             ProdutoNbr.Focus();
+
+            Response.Redirect("~/Default.aspx");
         }
         
         protected void Pesquisar_Click(object sender, EventArgs e)

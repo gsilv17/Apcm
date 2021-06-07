@@ -98,19 +98,19 @@ namespace Apcm.Service.Carrinho {
         ///	Declare @IdCarrinho int = 15
         ///--*/
         ///
+        ///Declare 
+        ///	@Table varchar(max),
+        ///	@Query nvarchar(max),
+        ///	@Parameters nvarchar(max),
+        ///	@CodSistema varchar(10)
+        ///
+        ///Select @CodSistema = Isnull(CodSistema, &apos;Atacado&apos;) From Carrinho Where IdCarrinho = @IdCarrinho
+        ///Select @Table = Case When @CodSistema = &apos;Atacado&apos; Then &apos;IF_HIERARCHY_XREF_SAMS&apos; Else &apos;IF_HIERARCHY_XREF&apos; End
+        ///Set @Parameters = N&apos;@IdCarrinho int&apos;
+        ///
+        ///Set @Query = N&apos;
         ///Update CarrinhoItem Set
-        ///	  SamsCodDepartamento = x.N3WM_DEPTOID
-        ///	, SamsDescrDepartamento = x.N3WM_DEPTO
-        ///	, DescrSecao = x.N4SAD_SECAO
-        ///	, DescrLinha = x.N5SAD_LINHA 
-        ///	, DescrSublinha = x.N6SAD_SUBLINHA
-        ///From
-        ///	CarrinhoItem as ci
-        ///	Inner Join SAD_ITEM_PRATELEIRA as p on p.item_nbr = ci.item_nbr
-        ///	Left  Join IF_HIERARCHY_XREF_SAMS as x on 
-        ///		x.N4SAD_SECAOID = p.Secao
-        ///		And x.N5SAD_LINHAID = p.Linha
-        ///		And x.N6SAD_SUBLINHAI [rest of string was truncated]&quot;;.
+        ///	  SamsCodDepartamento = x. [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string AtualizarDescrEstrutura {
             get {
@@ -158,7 +158,7 @@ namespace Apcm.Service.Carrinho {
         ///   Looks up a localized string similar to -- Carrinho.CarrinhosDisponiveis
         ///
         ////*
-        ///Declare @Login varchar(10) = &apos;r0macar&apos;, @CodOrigem varchar(5) = &apos;Sams&apos;
+        ///Declare @Login varchar(10) = &apos;r0macar&apos;, @CodOrigem varchar(5) = &apos;Sams&apos;, @CodSistema varchar(10) = &apos;Atacado&apos;
         ///--*/
         ///
         ///SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
@@ -174,8 +174,7 @@ namespace Apcm.Service.Carrinho {
         ///			When Count(1) = 1 Then 
         ///				Case 
         ///					When c.CodOrigem = &apos;Sad&apos; Then &apos; Produto Pendente&apos;
-        ///					When c.CodOrigem = &apos;Novo&apos; Then &apos; Produto Novo&apos;
-        ///					E [rest of string was truncated]&quot;;.
+        ///					When c.CodOrigem  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string CarrinhosDisponiveis {
             get {
@@ -216,7 +215,7 @@ namespace Apcm.Service.Carrinho {
         ///   Looks up a localized string similar to -- Carrinho - CriarCarrinhoNovo
         ///
         ////*
-        ///	Declare @Login varchar(10) = &apos;gsilv17&apos;, @Guid varchar(60) = &apos;ffdc44aec31749f3ac6a9ae860e0d945&apos;
+        ///	Declare @Login varchar(10) = &apos;gsilv17&apos;, @Guid varchar(60) = &apos;ffdc44aec31749f3ac6a9ae860e0d945&apos;, @CodSistema varchar(10) = &apos;Atacado&apos;
         ///--*/
         ///
         ///Declare 
@@ -231,7 +230,7 @@ namespace Apcm.Service.Carrinho {
         ///Select @Matric = LoginSad From TSamsF3User Where [Login] = @Login
         ///
         ///-- Criação do Carrinho
-        ///Insert Into Carrinho ( [Login], DhCriacao, CodOrigem, Dessinc ) Values (@Login, @DhCriacao, &apos; [rest of string was truncated]&quot;;.
+        ///Insert Into Carrinho ( [Login], DhCriacao, CodOrigem, De [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string CriarCarrinhoNovo {
             get {
@@ -466,13 +465,14 @@ namespace Apcm.Service.Carrinho {
         ///
         ///Select @CodOrigem = CodOrigem From Carrinho Where IdCarrinho = @IdCarrinho
         ///
+        ////*
         ///IF @CodOrigem = &apos;Sams&apos; -- Ações sobre a Cross
         ///	Begin
         ///
         ///	Update CarrinhoItem Set -- Regra 2 - Possui cross item ou possui cross upc sem multipack.					
         ///		produto_nbr =
         ///			Case 
-        ///				When xItem.XREF_BR_IF_ITEM_ID is not null Or xUpc.MULTIPACK = &apos;N&apos; Or xUpc.MULTIPACK = &apos;&apos;  [rest of string was truncated]&quot;;.
+        ///				When xItem.XREF_BR_IF_ITEM_ID is not null Or xUpc.MULTIPACK = &apos;N&apos; Or xUpc.MULTIPACK = [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ObterExportacao {
             get {
@@ -526,6 +526,31 @@ namespace Apcm.Service.Carrinho {
         internal static string RemoverCarrinhoItem {
             get {
                 return ResourceManager.GetString("RemoverCarrinhoItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -- Carrinho.RemoverCarrinhoItemAutomatico
+        ///
+        ////*
+        ///	Declare @DiasLimiteCarrinho int = 30
+        ///--*/
+        ///
+        ///Update CarrinhoItem Set 
+        ///	EmEdicao = 0, 
+        ///	LoginAlteracaoEmEdicao = null, 
+        ///	DhUltimaAlteracao = GETDATE()
+        ///From
+        ///	Carrinho as c
+        ///	Inner Join CarrinhoItem as ci
+        ///		on ci.IdCarrinho = c.IdCarrinho
+        ///Where 
+        ///	ci.EmEdicao = 1
+        ///	And c.DhCriacao &lt;= DATEADD(day, @DiasLimiteCarrinho * -1, GETDATE()).
+        /// </summary>
+        internal static string RemoverCarrinhoItemAutomatico {
+            get {
+                return ResourceManager.GetString("RemoverCarrinhoItemAutomatico", resourceCulture);
             }
         }
     }

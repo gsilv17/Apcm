@@ -12,7 +12,7 @@ namespace Apcm.PesquisaLote.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -20,15 +20,6 @@ namespace Apcm.PesquisaLote.Properties {
         public static Settings Default {
             get {
                 return defaultInstance;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("00:00:15")]
-        public global::System.TimeSpan EsperaEntreExecucoes {
-            get {
-                return ((global::System.TimeSpan)(this["EsperaEntreExecucoes"]));
             }
         }
         
@@ -47,17 +38,6 @@ namespace Apcm.PesquisaLote.Properties {
         public string SadConsultaDetalhe {
             get {
                 return ((string)(this["SadConsultaDetalhe"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LBRNT575515BRA.br.wal-mart.com;Initial Catalog=SAMS_UAT;Persist Secur" +
-            "ity Info=True;User ID=usrTransSams;Password=usrTransSamspwd")]
-        public string DataContext {
-            get {
-                return ((string)(this["DataContext"]));
             }
         }
         
@@ -85,6 +65,35 @@ namespace Apcm.PesquisaLote.Properties {
         public string SadBaseUrlVarejo {
             get {
                 return ((string)(this["SadBaseUrlVarejo"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DC1PBRNTDB0027;Initial Catalog=SAMS;Persist Security Info=False;User " +
+            "ID=bif_etl;Password=bif_etl#2019")]
+        public string DataContext {
+            get {
+                return ((string)(this["DataContext"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("00:00:10")]
+        public global::System.TimeSpan EsperaEntreExecucoes {
+            get {
+                return ((global::System.TimeSpan)(this["EsperaEntreExecucoes"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("30")]
+        public int DiasLimiteCarrinho {
+            get {
+                return ((int)(this["DiasLimiteCarrinho"]));
             }
         }
     }

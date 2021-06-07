@@ -135,5 +135,11 @@ namespace Apcm.Service.Carrinho
         /// <param name="idCarrinho">Identificação do carrinho</param>
         /// <returns>Dados do carrinho.</returns>
         CarrinhoData ObterCarrinho(int idCarrinho);
+
+        /// <summary>
+        /// Marca os itens do carrinho com EmEdicao = false com base na data de criação do carrinho.
+        /// </summary>
+        /// <param name="diasLimiteCarrinho">Dias limite para a data de criação (DhCriação <= Data Atual - X dias).</param>
+        void RemoverCarrinhoItemAutomatico(int diasLimiteCarrinho);
     }
 }

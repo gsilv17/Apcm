@@ -22,7 +22,9 @@ namespace Apcm.Web.Pages
             }
 
             ValidarAdmin();
-                
+
+            Response.Redirect("~/Default.aspx");
+
         }
 
 

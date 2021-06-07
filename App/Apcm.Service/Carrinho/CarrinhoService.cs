@@ -978,6 +978,11 @@ namespace Apcm.Service.Carrinho
         {
             return Repository.ObterCarrinho(idCarrinho).ToObject<CarrinhoData>().FirstOrDefault();
         }
+
+        public void RemoverCarrinhoItemAutomatico(int diasLimiteCarrinho)
+        {
+            Repository.RemoverCarrinhoItemAutomatico(diasLimiteCarrinho);
+        }
     }
 }
 

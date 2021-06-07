@@ -25,9 +25,6 @@ namespace Apcm.Web.Pages.Layout
             MenuAdministrador.Visible = UserData.Admin;
             MenuAtacado.Visible = UserData.Admin || (UserData.Editor && UserData.Atacado);
             MenuVarejo.Visible = UserData.Admin || (UserData.Editor && UserData.Varejo);
-
-            //string[] specialUsers = { "gsilv17", "eferr12", "jborner" };
-            //MenuDessinc.Visible = specialUsers.Contains(UserData.Login);
         }
 
         protected void atualizarPerfil_Click(object sender, EventArgs e)

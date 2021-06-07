@@ -154,5 +154,10 @@ namespace Apcm.Service.Carrinho
             tbl.TableName = "CarrinhoItemBulk";
             return tbl;
         }
+
+        public void RemoverCarrinhoItemAutomatico(int diasLimiteCarrinho)
+        {
+            DataContext.ExecuteNonQuery(CarrinhoScripts.RemoverCarrinhoItemAutomatico, DataParam.Create("DiasLimiteCarrinho", diasLimiteCarrinho));
+        }
     }
 }

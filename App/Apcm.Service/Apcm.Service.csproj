@@ -233,6 +233,7 @@
     <Content Include="Carrinho\CarrinhoScripts\DownloadCardErroRetorno.sql" />
     <Content Include="Carrinho\CarrinhoScripts\DownloadCardCross.sql" />
     <Content Include="Carrinho\CarrinhoScripts\ObterContagemCardHome.sql" />
+    <Content Include="Carrinho\CarrinhoScripts\RemoverCarrinhoItemAutomatico.sql" />
     <Content Include="Carrinho\CarrinhoScripts\RemoverCarrinhoItem.sql" />
     <Content Include="Carrinho\CarrinhoScripts\AtualizarDescrEstrutura.sql" />
     <Content Include="Carrinho\CarrinhoScripts\CarrinhosDisponiveis.sql" />

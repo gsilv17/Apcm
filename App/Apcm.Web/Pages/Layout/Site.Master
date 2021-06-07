@@ -50,9 +50,9 @@
                                 <asp:HyperLink runat="server" NavigateUrl="~/ControleAcesso" CssClass="dropdown-item ts-modal-espera-click">Controle de Acesso</asp:HyperLink>
                                 <%--<asp:HyperLink runat="server" NavigateUrl="~/GestaoCarrinho" CssClass="dropdown-item ts-modal-espera-click">Gestão de Carrinhos</asp:HyperLink>--%>
                                 
-                                <asp:HyperLink runat="server" ID="MenuDessinc" NavigateUrl="~/Dessinc" CssClass="dropdown-item ts-modal-espera-click">Dessincronização</asp:HyperLink>
+                                <%--<asp:HyperLink runat="server" ID="MenuDessinc" NavigateUrl="~/Dessinc" CssClass="dropdown-item ts-modal-espera-click">Dessincronização</asp:HyperLink>--%>
                                 
-                                <asp:HyperLink runat="server" NavigateUrl="~/PesquisaDessinc" CssClass="dropdown-item ts-modal-espera-click">Pesquisa de Dessincronização</asp:HyperLink>
+                                <%--<asp:HyperLink runat="server" NavigateUrl="~/PesquisaDessinc" CssClass="dropdown-item ts-modal-espera-click">Pesquisa de Dessincronização</asp:HyperLink>--%>
                             </ul>
 
                         </li>

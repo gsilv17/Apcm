@@ -44,6 +44,8 @@ namespace Apcm.Web.Pages
             SessionItensCarrinho(AcaoSession.Limpar);
             ItensLocalizados.Text = "0";
             CarregarCarrinho();
+
+            Response.Redirect("~/Default.aspx");
         }
 
         private void SessionItensCarrinho(AcaoSession acao)

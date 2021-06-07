@@ -93,7 +93,9 @@ namespace Apcm.PesquisaLote
 
             try
             {
-                Services.LoteService.ProcessarLotes();
+                Task removerItem = Task.Run(() => Services.Carrinho.RemoverCarrinhoItemAutomatico(Settings.Default.DiasLimiteCarrinho));
+                Task processamento = Task.Run(() => Services.LoteService.ProcessarLotes());
+                Task.WaitAll(removerItem, processamento);
                 Services.LogService.Fixo("Apcm.PesquisaLote", "Executado");
             }
             catch (Exception ex)

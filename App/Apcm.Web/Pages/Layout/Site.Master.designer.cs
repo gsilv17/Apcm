@@ -51,15 +51,6 @@ namespace Apcm.Web.Pages.Layout
         protected global::System.Web.UI.WebControls.HyperLink MenuAdministrador;
 
         /// <summary>
-        /// MenuDessinc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink MenuDessinc;
-
-        /// <summary>
         /// MenuAtacado control.
         /// </summary>
         /// <remarks>
